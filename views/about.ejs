@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ChatApp</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links .btn {
+    background-color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.nav-links .btn:hover {
+    background-color: #0056b3;
+}
+
+main {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 2rem;
+}
+
+.about-hero {
+    background-color: #007bff;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.history, .features, .team {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.history h2, .features h2, .team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.history p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.features-container, .team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature-item, .team-member {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 1rem;
+    padding: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+}
+
+.feature-item h3, .team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item p, .team-member p {
+    font-size: 1rem;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ChatApp</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login" class="btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>About Us</h1>
+            <p>Discover the story behind ChatApp and meet the team dedicated to connecting people around the world.</p>
+        </section>
+
+        <section class="history">
+            <h2>Our Journey</h2>
+            <p>ChatApp started as a small project with a big vision: to make communication seamless and accessible for everyone. Over the years, we have grown into a robust platform used by millions worldwide.</p>
+        </section>
+
+        <section class="features" id="features">
+            <h2>Core Features</h2>
+            <div class="features-container">
+                <div class="feature-item">
+                    <h3>Real-time Messaging</h3>
+                    <p>Send and receive messages instantly with our real-time messaging feature.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Secure Conversations</h3>
+                    <p>Your privacy is our priority. All conversations are encrypted for maximum security.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Cross-Platform Support</h3>
+                    <p>Stay connected on any device, whether it's a smartphone, tablet, or desktop.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <h2>Meet the Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="team-member1.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member2.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Chief Technology Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member3.jpg" alt="Team Member 3">
+                    <h3>Mike Johnson</h3>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ChatApp. All rights reserved.</p>
+    </footer>
+</body>
+</html>
