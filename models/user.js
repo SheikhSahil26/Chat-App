@@ -20,8 +20,9 @@ const userSchema=new Schema({
         required:false,
     },
     contacts:{
-        type:[],
-        
+        type:[Schema.Types.ObjectId],
+        ref:"users",
+        required:false,
     }
 },
 {timestamps:true});

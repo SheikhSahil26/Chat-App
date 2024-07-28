@@ -2,7 +2,14 @@ const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
 const cookieParser=require('cookie-parser');
+const session=require("express-session");
 
+app.use(session({
+    secret: '1234567890',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false ,path:'/' } // Set secure: true if using HTTPS
+  }));
 
 const port=300;
 

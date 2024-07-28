@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    background-color: #1d2368;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
     padding: 1rem 2rem;
     color: white;
 }
@@ -71,7 +71,8 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #f0f0f0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
     padding: 2rem;
 }
 
@@ -105,7 +106,7 @@ main {
 }
 
 footer {
-    background-color: #1d2368;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -117,22 +118,36 @@ footer {
 <body>
     <header>
         <nav>
-            <a class="logo" href="/">ChatApp</a>
+            <% if (!user) { %>
+                <a class="logo">ChatApp</a>
+            <% } else { %>
+                <a class="logo">Welcome,<%= user.name%></a>
+                <% } %>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+            
+                <li><a href="/user/searchpeople">Search peoples</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#login" class="btn">Login</a></li>
+                <% if (user) { %>
+                    <li><a href="/user/logout" class="btn">Logout</a></li>
+                <% } %>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero" id="home">
-            <h1>Welcome to ChatApp</h1>
-            <p>Connect with your friends and family anytime, anywhere.</p>
-            <a href="/signup" class="btn">Get Started</a>
+            <h1 style="color: white;">Welcome to ChatApp</h1>
+            <p style="color: white">Connect with your friends and family anytime, anywhere.</p>
+            <% if (user===null) { %>
+                <a href="/signup" class="btn">Get Started</a>
+            <% } else {%>
+                <a href="/user/contacts" class="btn">Your Contacts</a>
+                <%}%>
+            
+
+            
         </section>
     </main>
 

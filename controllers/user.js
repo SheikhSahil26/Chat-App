@@ -2,6 +2,7 @@
 const mongoose=require("mongoose");
 const {v4:uuidv4}=require("uuid");
 const User=require("../models/user")
+const {setUser,getUser}=require("../services/auth")
 
 async function userSignUp(req,res){
     const {name,email,password,}=req.body;
@@ -21,15 +22,29 @@ async function userLogin(req,res){
     if(!user)
         console.log("invalid credentials");
 
-    
+    req.session.user=user;
+    const data=encodeURIComponent(JSON.stringify(user))
+    return res.redirect(`/user/home`);
 
-    return res.redirect("/");
+    // return res.redirect("/");
 
 
 }
+
+async function userLogOut(req,res){
+    req.session.destroy(err => {
+        if (err) {
+        return res.redirect('/');
+        }
+        res.clearCookie('connect.sid',{path:'/'});
+        res.redirect('/');
+    });
+}
+
 
 
 module.exports={
     userSignUp,
     userLogin,
+    userLogOut,
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - User List</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-list li, .contact-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.user-list button, .contact-list button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #573b8a;
+    cursor: pointer;
+}
+
+.user-list button:hover, .contact-list button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <%= user.name%></h1>
+        <h2>Connect with </h2>
+        <div class="users-section">
+            <h2>All Users</h2>
+            <ul class="user-list">
+                <% if (locals.allUsers) { %>
+                    <% allUsers.forEach(users=> { %>
+                        <% if (user.name!==users.name) { %>
+                            <li>
+                                <span><%=users.name%></span>
+                                <a href="/user/addpeople">Add Contact</a>
+                            </li>
+                        <% } %>
+                       
+                    <% }) %>
+                <% } %>
+                
+            </ul>
+        </div>
+        
+      
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

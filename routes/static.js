@@ -17,7 +17,8 @@ const storage=multer.diskStorage({
 })
 
 router.get("/",(req,res)=>{
-    return res.render("home");
+    const user=null;
+    return res.render("home",{user});
 })
 router.get("/signup",(req,res)=>{
     return res.render("signup");
